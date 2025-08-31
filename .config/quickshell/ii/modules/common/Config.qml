@@ -91,7 +91,15 @@ Singleton {
                     property bool enableAppsAndShell: true
                     property bool enableQtApps: true
                     property bool enableTerminal: true
+<<<<<<< HEAD
                     property bool forceTerminalDarkMode: false
+=======
+                    property JsonObject generationProps: JsonObject {
+                        property real harmony: 0.5
+                        property real harmonizeThreshold: 100
+                        property real termFgBoost: 0.35
+                    }
+>>>>>>> 82bb1175 (customize terminals harmony)
                 }
                 property JsonObject palette: JsonObject {
                     property string type: "auto" // Allowed: auto, scheme-content, scheme-expressive, scheme-fidelity, scheme-fruit-salad, scheme-monochrome, scheme-neutral, scheme-rainbow, scheme-tonal-spot
