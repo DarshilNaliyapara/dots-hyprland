@@ -5,8 +5,6 @@ import qs.services
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import org.kde.plasma.core as PlasmaCore 
-import org.kde.plasma.components as PlasmaComponents
 
 StyledPopup {
     id: root
