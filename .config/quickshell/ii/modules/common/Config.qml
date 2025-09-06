@@ -92,10 +92,15 @@ Singleton {
                     property bool enableQtApps: true
                     property bool enableTerminal: true
 <<<<<<< HEAD
+<<<<<<< HEAD
                     property bool forceTerminalDarkMode: false
 =======
                     property JsonObject generationProps: JsonObject {
                         property real harmony: 0.5
+=======
+                    property JsonObject terminalGenerationProps: JsonObject {
+                        property real harmony: 0.8
+>>>>>>> c3950774 (rename generationProps -> terminalGenerationProps, change default harmony to match script)
                         property real harmonizeThreshold: 100
                         property real termFgBoost: 0.35
                     }
