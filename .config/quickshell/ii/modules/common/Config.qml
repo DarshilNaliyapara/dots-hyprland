@@ -103,6 +103,7 @@ Singleton {
 >>>>>>> c3950774 (rename generationProps -> terminalGenerationProps, change default harmony to match script)
                         property real harmonizeThreshold: 100
                         property real termFgBoost: 0.35
+                        property bool forceDarkMode: false
                     }
 >>>>>>> 82bb1175 (customize terminals harmony)
                 }
