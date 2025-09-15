@@ -99,8 +99,12 @@ Singleton {
                         property real harmony: 0.5
 =======
                     property JsonObject terminalGenerationProps: JsonObject {
+<<<<<<< HEAD
                         property real harmony: 0.8
 >>>>>>> c3950774 (rename generationProps -> terminalGenerationProps, change default harmony to match script)
+=======
+                        property real harmony: 0.6
+>>>>>>> d3a1bd52 (more readable terminal colors by default)
                         property real harmonizeThreshold: 100
                         property real termFgBoost: 0.35
                         property bool forceDarkMode: false
