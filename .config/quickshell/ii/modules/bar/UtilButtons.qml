@@ -13,7 +13,13 @@ Item {
     property bool borderless: Config.options.bar.borderless
     implicitWidth: rowLayout.implicitWidth + rowLayout.spacing * 2
     implicitHeight: rowLayout.implicitHeight
+    property int pkgCount: 0
 
+    Component.onCompleted: {
+        Quickshell.exec(["bash", "-c", "checkupdates | wc -l"], function(out) {
+            pkgCount = parseInt(out.trim())
+        })
+    }
     RowLayout {
         id: rowLayout
 
@@ -81,6 +87,27 @@ Item {
                     iconSize: Appearance.font.pixelSize.large
                     color: Appearance.colors.colOnLayer2
                 }
+            }
+        }
+
+        Loader {
+            active: pkgCount > 0 
+            visible: pkgCount > 0
+            sourceComponent: CircleUtilButton {
+                Layout.alignment: Qt.AlignVCenter
+                onClicked: {
+                   Quickshell.execDetached([
+                        "kitty", "-e", "fish", "-c",
+                        "fastfetch; echo; echo (set_color green)'=== Full System Update ==='(set_color normal); echo;sudo pacman -Syu; echo (set_color yellow)'Press Enter to close...';read;"
+                    ])
+                }
+                MaterialSymbol {
+                    horizontalAlignment: Qt.AlignHCenter
+                    fill: 0
+                    text: "package"
+                    iconSize: Appearance.font.pixelSize.large
+                    color: Appearance.colors.colOnLayer2
+                }                
             }
         }
 
